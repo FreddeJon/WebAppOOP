@@ -1,0 +1,64 @@
+﻿@page
+@model WebAppOOP.WebAppUI.Pages.Profile.OrdersModel
+@{
+}
+
+
+@if (Model.Orders.Count > 0)
+{
+<div class="dropdown indexDropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Sort by
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a Style="color:black" asp-route-sortOrder="?sort=HighestPrice">Highest Price</a></li>
+        <li><a Style="color:black" asp-route-sortOrder="?sort=LowestPrice">Lowest Price</a></li>
+        <li><a Style="color:black" asp-route-sortOrder="?sort=IsPaid">Is Paid</a></li>
+        <li><a Style="color:black" asp-route-sortOrder="?sort=NotPaid">Not Paid</a></li>
+    </ul>
+</div>
+        <div class="container-fluid">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Total Cost</th>
+                        <th scope="col">Is Paid</th>
+                        <th scope="col">Details</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model.Orders)
+                    {
+                        <tr>
+                            <th scope="row">@order.Id</th>
+                            <td>@order.OrderDate</td>
+                            <td>@order.ShoppingCart.GetTotalIncShipping()</td>
+                            <td>@order.IsPaid</td>
+                            <td>
+                                <a class="btn btn-primary" asp-page="./OrderDetails" asp-route-id="@order.Id">Details</a>
+                            </td>
+                            <td>
+                                @if (order.IsPaid)
+                                {
+                                    <a class="btn btn-primary" asp-page="./Reciept" asp-route-orderKey="@order.RecieptKey">Reciept</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-primary" asp-page="./PayLater" asp-route-orderKey="@order.Id">Pay</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        }
+        else
+        {
+        <div class="text text-center"><h4 class="display-4">You dont have any orders</h4></div>
+
+        }

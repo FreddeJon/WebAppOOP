@@ -1,0 +1,76 @@
+{
+  "DigitalProducts": [
+    {
+      "Id": 1,
+      "Name": "Digital sttuff",
+      "Summary": "A Black Shirt",
+      "IMGUrl": "https://i.imgur.com/JvPeqEF.jpg",
+      "Quantity": 0,
+      "Price": 150.0,
+      "CurrentPrice": 0.0,
+      "LicenceKey": null,
+      "ProductType": 1
+    },
+    {
+      "Id": 2,
+      "Name": "DigitalPants",
+      "Summary": "A Red Shirt",
+      "IMGUrl": "https://i.imgur.com/JvPeqEF.jpg",
+      "Quantity": 0,
+      "Price": 1200.0,
+      "CurrentPrice": 0.0,
+      "LicenceKey": null,
+      "ProductType": 1
+
+    },
+    {
+      "Id": 3,
+      "Name": "DigitalShoes",
+      "Summary": "A Green Shirt",
+      "IMGUrl": "https://i.imgur.com/JvPeqEF.jpg",
+      "Quantity": 0,
+      "Price": 1000.0,
+      "CurrentPrice": 0.0,
+      "LicenceKey": null,
+      "ProductType": 1
+
+    }
+  ],
+  "PhysicalProducts": [
+    {
+      "Weight": 1.0,
+      "Id": 4,
+      "Name": "Tshirt",
+      "Summary": "A Black Shirt",
+      "IMGUrl": "https://i.imgur.com/JvPeqEF.jpg",
+      "Quantity": 0,
+      "Price": 500.0,
+      "CurrentPrice": 0.0,
+      "ProductType": 2
+
+    },
+    {
+      "Weight": 2.0,
+      "Id": 5,
+      "Name": "Pants",
+      "Summary": "A Red Shirt",
+      "IMGUrl": "https://i.imgur.com/JvPeqEF.jpg",
+      "Quantity": 0,
+      "Price": 100.0,
+      "CurrentPrice": 0.0,
+      "ProductType": 2
+
+    },
+    {
+      "Weight": 2.0,
+      "Id": 6,
+      "Name": "Shoes",
+      "Summary": "A Green Shirt",
+      "IMGUrl": "https://i.imgur.com/JvPeqEF.jpg",
+      "Quantity": 0,
+      "Price": 1200.0,
+      "CurrentPrice": 0.0,
+      "ProductType": 2
+    }
+  ]
+}

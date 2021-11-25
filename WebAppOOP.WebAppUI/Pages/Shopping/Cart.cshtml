@@ -1,0 +1,48 @@
+﻿@page
+@model WebAppOOP.WebAppUI.Pages.Shopping.CartModel
+@{
+}
+
+<div class="container">
+            <h4 class="mb-3">Shopping cart</h4>
+            <hr class="mb-4">
+            @foreach (var product in @Model.Cart.GetList())
+            {
+                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
+                    <div class="mr-1"><img class="rounded" src="@product.IMGUrl" width="70"></div>
+                    <div class="d-flex flex-column align-items-center product-details">
+                        <span class="font-weight-bold">@product.Name</span>
+                        <div class="d-flex flex-row product-desc">
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center qty">
+                        <form method="post">
+                            <input type="hidden" asp-for="@Model.Id" value="@product.Id" />
+                            <button type="submit" class="btn" and style="background-color:transparent" asp-page-handler="Decrease"><i class="fa fa-minus"></i></button>
+                        </form>
+                        <h5 class="text-grey mt-1 mr-1 ml-1">@product.Quantity</h5>
+                        <form method="post">
+                            <input type="hidden" asp-for="@Model.Id" value="@product.Id" />
+                            <button type="submit" class="btn" and style="background-color:transparent" asp-page-handler="Increase"><i class="fa fa-plus"></i></button>
+                        </form>
+                    </div>
+                    <div>
+                        <h5 class="text-grey">@product.GetTotalCostToString()</h5>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <form method="post">
+                            <input type="hidden" asp-for="@Model.Id" value="@product.Id" />
+                            <button type="submit" class="btn" and style="background-color:transparent" asp-page-handler="Remove"><i class="fa fa-trash mb-1 text-danger"></i></button>
+                        </form>
+                    </div>
+                </div>
+            }
+            <div class="d-flex flex-row align-items-center pull-right"><span class="mr-1">Total:</span><span class="mr-1">@Model.Cart.GetTotalIncShipping() Shipping: @Model.Cart.GetShippingCostToString();</span></div>
+            <br />
+            <div class="d-flex flex-row align-items-center bg-white rounded">
+                <form method="post">
+                    <input type="hidden" asp-for="@Model.Key" value="@Model.Cart.Key" />
+                    <button class="btn btn-warning btn-block btn-lg mr-lg-5" type="submit" asp-page-handler="Checkout">Proceed to Pay</button>
+                </form>
+            </div>
+</div>

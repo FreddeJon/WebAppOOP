@@ -1,0 +1,64 @@
+﻿@page
+@model WebAppOOP.WebAppUI.Pages.Profile.PayLaterModel
+@{
+}
+
+<div>
+    <h4 class="mb-3">Shopping Cart</h4>
+    <hr class="mb-4">
+    @foreach (var product in @Model.Order.ShoppingCart.GetList())
+    {
+        <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
+            <div class="mr-1"><img class="rounded" src="@product.IMGUrl" width="70"></div>
+            <div class="d-flex flex-column align-items-center product-details">
+                <span>@product.Name</span>
+                <div class="d-flex flex-row product-desc">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+                <span>Qty: @product.Quantity</span>
+            </div>
+            <div>
+                <span>@product.GetTotalCostToString()</span>
+            </div>
+        </div>
+    }
+    <div class="d-flex flex-row align-items-center pull-right"><span class="mr-1">Total:</span><span class="mr-1">@Model.Order.ShoppingCart.GetTotalIncShipping() Shipping: @Model.Order.ShoppingCart.GetShippingCostToString()</span></div>
+    <br />
+
+    <hr class="mb-4">
+    <h4 class="mb-3">Payment</h4>
+    <form method="post">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Card.CCName"></label>
+                <input type="text" class="form-control" asp-for="Card.CCName">
+                <small class="text-muted">Full name as displayed on card</small>
+                <div class="invalid-feedback"> Name on card is required </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Card.CCNumber"></label>
+                <input type="text" class="form-control" asp-for="Card.CCNumber">
+                <div class="invalid-feedback"> Credit card number is required </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <label asp-for="Card.CCExpiration"></label>
+                <input type="text" class="form-control" asp-for="Card.CCExpiration">
+                <div class="invalid-feedback"> Expiration date required </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label asp-for="Card.CCCvv"></label>
+                <input type="text" class="form-control" asp-for="Card.CCCvv">
+                <div class="invalid-feedback"> Security code required </div>
+            </div>
+        </div>
+        <hr class="mb-4">
+
+        <div class="btn-group">
+            <button class="btn btn-primary mr-1" type="submit" asp-page-handler="Pay">Continue to checkout</button>
+        </div>
+
+    </form>
+</div>

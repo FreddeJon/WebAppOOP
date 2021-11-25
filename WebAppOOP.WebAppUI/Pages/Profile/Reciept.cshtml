@@ -1,0 +1,61 @@
+﻿@page
+@model WebAppOOP.WebAppUI.Pages.Profile.RecieptModel
+@{
+}
+
+
+@if (Model.Reciept.Cart.GetList().Count > 0)
+{
+<div>
+    <h1 class="display-4">Reciept</h1>
+    <p>Date: @Model.Reciept.PayDate</p>
+    <p>CardNO: @Model.Reciept.Card.CCNumber</p>
+</div>
+<br />
+<div class="container-fluid">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">QTY</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Reciept.Cart.GetList())
+            {
+                <tr>
+                    <th scope="row">@product.Name</th>
+                    <td>@product.Quantity</td>
+                    <td>@product.Price</td>
+                    <td>@product.GetTotalCostToString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="d-flex flex-row align-items-center pull-right"><span class="mr-1">Total:</span><span class="mr-1">@Model.Reciept.Cart.GetCostToString() Shipping: @Model.Reciept.Cart.GetShippingCostToString()</span></div>
+</div>
+    <div class="container-fluid">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Licence keys</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var key in Model.Reciept.LicenceKeys)
+                {
+                    <tr>
+                        <td>@key</td>             
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="text text-center"><h4 class="display-4">You dont have any reciepts</h4></div>
+
+}

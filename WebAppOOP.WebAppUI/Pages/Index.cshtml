@@ -1,0 +1,61 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+<form method="post">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search" asp-for="Search">
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-primary" asp-page-handler="Search"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+</form>
+<div class="dropdown indexDropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Sort by
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a Style="color:black"  asp-route-sortOrder="?sort=HigestPrice">Highest Price</a></li>
+        <li><a Style="color:black"  asp-route-sortOrder="?sort=LowestPrice">Lowest Price</a></li>
+        <li><a Style="color:black"  asp-route-sortOrder="?sort=Physical">Physical</a></li>
+        <li><a Style="color:black"  asp-route-sortOrder="?sort=Digital">Digital</a></li>
+    </ul>
+</div>
+@if (Model.Message != null)
+{
+    <div class="alert alert-warning">@Model.Message</div>
+}
+
+
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+            @foreach (var product in Model.Products)
+            {
+                <div class="row p-2 bg-white border rounded">
+                    <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="@product.IMGUrl"></div>
+                    <div class="col-md-6 mt-1">
+                        <h5>@product.Name</h5>
+                        <div class="mt-1 mb-1 spec-1"><span>@product.IMGUrl</span><span class="dot"></span><span></span><span class="dot"></span><span><br></span></div>
+                        <div class="mt-1 mb-1 spec-1"><span>@product.Summary</span><span class="dot"></span><span></span><span class="dot"></span><span><br></span></div>
+                        <p class="text-justify text-truncate para mb-0"><br><br></p>
+                    </div>
+                    <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                        <div class="d-flex flex-row align-items-center">
+                            <h4 class="mr-1">@product.GetTotalCostToString()</h4>
+                        </div>
+                        <h6 class="text-success"></h6>
+                        <form method="post">
+                            <input type="hidden" asp-for="ProductId" value="@product.Id" />
+                            <div class="d-flex flex-column mb-2"><button class="btn btn-outline-primary btn-sm mt-2" type="submit" asp-page-handler="Add">Add To Cart</button></div>
+                        </form>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

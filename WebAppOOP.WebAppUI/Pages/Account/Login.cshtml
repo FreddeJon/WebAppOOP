@@ -1,0 +1,28 @@
+﻿@page
+@model WebAppOOP.WebAppUI.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+@if (Model.Message is not null)
+{
+    <div class="alert alert-warning">@Model.Message</div>
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Login</h5>
+                    <form class="form-signin" method="post">
+                        <div class="form-label-group"> <input type="text" asp-for="UserCredential.Email" class="form-control" placeholder="Email" required autofocus></div>
+                        <br />
+                        <div class="form-label-group"> <input type="password" asp-for="UserCredential.Password" class="form-control" placeholder="Password" required></div>
+                        <br />
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" asp-page-handler="Login">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

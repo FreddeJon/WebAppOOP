@@ -1,0 +1,18 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <div class="btn-group-lg" style="margin: 0 auto" role="group">
+        <form method="post" asp-page="/account/Logout">
+            <button type="submit" class="btn btn-lg" and style="background-color:transparent" margin: 0 auto>Logout</button>
+        </form>
+        <a class="btn btn-lg" and style="background-color:transparent" asp-page="/Shopping/Cart"><i class="fas fa-shopping-cart"></i></a>
+        <a class="btn btn-lg" and style="background-color:transparent" asp-page="/Profile/Index"><i class="far fa-user-circle"></i></a>
+    </div>
+}
+else
+{
+    <div class="btn-group-lg" role="group">
+        <a class="btn btn-lg" and style="background-color:transparent" asp-page="/Shopping/Cart"><i class="fas fa-shopping-cart"></i></a>
+        <a class="btn btn-lg" and style="background-color:transparent" asp-page="/Account/Login"><i class="far fa-user-circle"></i></a>
+        <a class="btn btn-lg" and style="background-color:transparent" asp-page="/Account/Register"><i class="bi bi-person-plus"></i></a>
+    </div>
+}
