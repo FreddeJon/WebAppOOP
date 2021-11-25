@@ -1,1 +1,10 @@
-[{"Id":1,"Key":"LOCALCART","Products":{"DigitalProducts":[{"Id":1,"ProductType":1,"Name":"Digital sttuff","Summary":"A Black Shirt","IMGUrl":"https://i.imgur.com/JvPeqEF.jpg","Quantity":3,"Price":150.0,"CurrentPrice":0.0}],"PhysicalProducts":[{"Weight":1.0,"Id":4,"ProductType":2,"Name":"Tshirt","Summary":"A Black Shirt","IMGUrl":"https://i.imgur.com/JvPeqEF.jpg","Quantity":1,"Price":500.0,"CurrentPrice":0.0}]}},{"Id":2,"Key":"bwU5RB/rzD60eaWhOCv57TRCPOwwB4nPSo23uGu7i0Y=","Products":{"DigitalProducts":[],"PhysicalProducts":[]}}]
+[
+  {
+    "Id": 1,
+    "Key": "kJIZOCRMif/SRD6VI3fqrMI/HCcT4E9zVymZpsOQOCc=",
+    "Products": {
+      "DigitalProducts": [],
+      "PhysicalProducts": []
+    }
+  }
+]

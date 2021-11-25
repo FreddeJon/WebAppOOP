@@ -64,7 +64,7 @@ namespace WebbAppOOP.Data.DataAccess
 
         private void Write(List<T> list)
         {
-            var jsonString = JsonConvert.SerializeObject(list);
+            var jsonString = JsonConvert.SerializeObject(list, Formatting.Indented);
             File.WriteAllText(GetPath(), jsonString);
         }
         private List<T> Read()

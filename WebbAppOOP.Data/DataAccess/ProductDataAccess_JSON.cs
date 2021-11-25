@@ -68,7 +68,7 @@ namespace WebbAppOOP.Data.DataAccess
                 PhysicalProducts = physical
             };
 
-            var jsonString = JsonConvert.SerializeObject(list);
+            var jsonString = JsonConvert.SerializeObject(list, Formatting.Indented);
 
             File.WriteAllText(_path, jsonString);
         }

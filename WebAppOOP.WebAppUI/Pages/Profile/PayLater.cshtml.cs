@@ -39,7 +39,7 @@ namespace WebAppOOP.WebAppUI.Pages.Profile
         {
             if (!ModelState.IsValid) return Page();
 
-            Order = _orderAccess.GetById((int)HttpContext.Session.GetInt32("OrderId"));
+            Order = _orderAccess.GetById(HttpContext.Session.GetInt32("OrderId").Value);
             Order.IsPaid = true;
 
             Order.RecieptKey = Order.Key + Order.Id;

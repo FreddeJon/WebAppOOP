@@ -1,10 +1,42 @@
 [
   {
     "Id": 1,
-    "Key": "bwU5RB/rzD60eaWhOCv57TRCPOwwB4nPSo23uGu7i0Y=",
-    "HashedPassword": "bwU5RB/rzD60eaWhOCv57TRCPOwwB4nPSo23uGu7i0Y=",
-    "Salt": "NQOo6xjWpUfHgg==",
-    "Email": "fredrikjonson@hotmail.se",
+    "Key": "GLwDX3IfbgP1ooZ2FiejAnt/EN7jN2YBgnUhU6tpxVs=",
+    "HashedPassword": "GLwDX3IfbgP1ooZ2FiejAnt/EN7jN2YBgnUhU6tpxVs=",
+    "Salt": "4UtoIAjJxTkwtA==",
+    "Email": "fre@1",
     "UserType": 1
-  } 
+  },
+  {
+    "Id": 2,
+    "Key": "LD0WNPE7k97y7pKoATE8fwjICLuUKGBZZMbRZrGJrXA=",
+    "HashedPassword": "LD0WNPE7k97y7pKoATE8fwjICLuUKGBZZMbRZrGJrXA=",
+    "Salt": "4lw+wKTsCy+q6A==",
+    "Email": "fre@2",
+    "UserType": 1
+  },
+  {
+    "Id": 3,
+    "Key": "7QAMN720wrp7AvCjKMwKTF0lZgveDXH/RbP2JWNKm5g=",
+    "HashedPassword": "7QAMN720wrp7AvCjKMwKTF0lZgveDXH/RbP2JWNKm5g=",
+    "Salt": "6H4qYVa/jjO+sA==",
+    "Email": "fre@3",
+    "UserType": 1
+  },
+  {
+    "Id": 4,
+    "Key": "TRH3UG+GqaNhzthBdBX9x37TXLij4Ia0AcWPVWkyuLE=",
+    "HashedPassword": "TRH3UG+GqaNhzthBdBX9x37TXLij4Ia0AcWPVWkyuLE=",
+    "Salt": "ugz9bbRyx1HSEg==",
+    "Email": "fre@4",
+    "UserType": 1
+  },
+  {
+    "Id": 5,
+    "Key": "kJIZOCRMif/SRD6VI3fqrMI/HCcT4E9zVymZpsOQOCc=",
+    "HashedPassword": "kJIZOCRMif/SRD6VI3fqrMI/HCcT4E9zVymZpsOQOCc=",
+    "Salt": "X8PInVPQKZOB5g==",
+    "Email": "fre@5",
+    "UserType": 1
+  }
 ]
